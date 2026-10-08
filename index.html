@@ -1,142 +1,17 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>訂貨單</title>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>訂貨單</title>
 <style>
-*{box-sizing:border-box}
-body{
-  margin:0;padding:24px 12px;min-height:100vh;
-  display:flex;justify-content:center;align-items:flex-start;
-  background:#f3f4f6;
-  font-family:"Microsoft JhengHei","Noto Sans TC",Arial,sans-serif;color:#222
-}
-.sheet{
-  width:min(640px,100%);background:#fff;border:1px solid #999;
-  box-shadow:0 4px 16px rgba(0,0,0,.12);padding:24px
-}
-table{width:100%;border-collapse:collapse;table-layout:fixed}
-col.d{width:32%} col.e{width:34%} col.f{width:34%}
-td{
-  border:1px solid #777;height:44px;padding:7px 9px;
-  font-size:18px;vertical-align:middle;background:#fff
-}
-.empty{color:transparent}
-.yellow{background:#ffff00}
-.yellow input{
-  width:100%;border:1px solid #aaa;background:#fff;border-radius:4px;
-  padding:7px 8px;font-size:18px;font-family:inherit;outline:none
-}
-.yellow input:focus{border-color:#555;box-shadow:0 0 0 2px rgba(0,0,0,.08)}
-.blue{background:#00b0f0;text-align:center;font-weight:600}
-.green{background:#70ad47;padding:0}
-.red{background:#ff0000;padding:0}
-button{
-  width:100%;height:100%;min-height:52px;border:0;cursor:pointer;
-  font-size:20px;font-weight:700;font-family:inherit;color:#fff;background:transparent
-}
-button:hover{background:rgba(255,255,255,.15)}
-.note{margin-top:14px;color:#666;font-size:13px;line-height:1.6}
-@media(max-width:480px){
-  body{padding:10px 6px}.sheet{padding:12px}
-  td{font-size:16px;height:42px}.yellow input{font-size:16px}button{font-size:18px}
-}
-</style>
-</head>
-<body>
-<div class="sheet">
-<table aria-label="訂貨單">
-<colgroup><col class="d"><col class="e"><col class="f"></colgroup>
-
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
-
-<tr>
-  <td class="yellow"><input id="D3" type="text" aria-label="D3"></td>
-  <td>店訂貨</td>
-  <td class="empty">&nbsp;</td>
-</tr>
-
-<tr><td colspan="3">丞韻</td></tr>
-
-<tr>
-  <td>訂貨項目</td><td>數量</td><td>單位</td>
-</tr>
-
-<tr>
-  <td>仙草汁</td>
-  <td class="yellow"><input id="E6" type="text" inputmode="decimal" aria-label="E6"></td>
-  <td>箱</td>
-</tr>
-<tr>
-  <td>二砂糖</td>
-  <td class="yellow"><input id="E7" type="text" inputmode="decimal" aria-label="E7"></td>
-  <td>20KG/袋</td>
-</tr>
-<tr>
-  <td>白砂糖</td>
-  <td class="yellow"><input id="E8" type="text" inputmode="decimal" aria-label="E8"></td>
-  <td>20KG/袋</td>
-</tr>
-
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
-
-<tr><td class="empty">&nbsp;</td><td colspan="2" class="blue" id="dateCell"></td></tr>
-
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
-
-<tr>
-  <td class="empty">&nbsp;</td>
-  <td colspan="2" class="green"><button type="button" id="sendBtn">送出</button></td>
-</tr>
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
-<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="red"><button type="button" id="clearBtn">清除</button></td></tr>
-</table>
-
-<div class="note">
-黃底欄位可輸入；藍底自動顯示網頁開啟當日的民國日期。按「送出」會將訂貨內容帶入 LINE。
-</div>
-</div>
-
+*{box-sizing:border-box}body{margin:0;padding:24px 12px;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;background:#f3f4f6;font-family:"Microsoft JhengHei","Noto Sans TC",Arial,sans-serif;color:#222}.sheet{width:min(640px,100%);background:#fff;border:1px solid #999;box-shadow:0 4px 16px rgba(0,0,0,.12);padding:24px}table{width:100%;border-collapse:collapse;table-layout:fixed}col.d{width:32%}col.e{width:34%}col.f{width:34%}td{border:1px solid #777;height:44px;padding:7px 9px;font-size:18px;vertical-align:middle;background:#fff}.empty{color:transparent}.yellow{background:#ffff00}.yellow input{width:100%;border:1px solid #aaa;background:#fff;border-radius:4px;padding:7px 8px;font-size:18px;font-family:inherit;outline:none}.blue{background:#00b0f0;text-align:center;font-weight:600}.green{background:#70ad47;padding:0}.red{background:#ff0000;padding:0}button{width:100%;height:100%;min-height:52px;border:0;cursor:pointer;font-size:20px;font-weight:700;font-family:inherit;color:#fff;background:transparent}button:hover{background:rgba(255,255,255,.15)}@media(max-width:480px){body{padding:10px 6px}.sheet{padding:12px}td{font-size:16px;height:42px}.yellow input{font-size:16px}button{font-size:18px}}
+</style></head><body><div class="sheet"><table aria-label="訂貨單"><colgroup><col class="d"><col class="e"><col class="f"></colgroup>
+<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr><tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+<tr><td class="yellow"><input id="D3" type="text"></td><td>店訂貨</td><td class="empty">&nbsp;</td></tr><tr><td colspan="3">丞韻</td></tr><tr><td>訂貨項目</td><td>數量</td><td>單位</td></tr>
+<tr><td>仙草汁</td><td class="yellow"><input id="E6" type="text" inputmode="decimal"></td><td>箱</td></tr><tr><td>二砂糖</td><td class="yellow"><input id="E7" type="text" inputmode="decimal"></td><td>20KG/袋</td></tr><tr><td>白砂糖</td><td class="yellow"><input id="E8" type="text" inputmode="decimal"></td><td>20KG/袋</td></tr>
+<tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr><tr><td class="empty">&nbsp;</td><td colspan="2" class="blue" id="dateCell"></td></tr><tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr>
+<tr><td class="empty">&nbsp;</td><td colspan="2" class="green"><button id="sendBtn">送出</button></td></tr><tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td></tr><tr><td class="empty">&nbsp;</td><td class="empty">&nbsp;</td><td class="red"><button id="clearBtn">清除</button></td></tr>
+</table></div>
 <script>
-(function(){
-  function setTaiwanDate(){
-    const now=new Date();
-    const y=now.getFullYear()-1911;
-    const m=String(now.getMonth()+1).padStart(2,"0");
-    const d=String(now.getDate()).padStart(2,"0");
-    document.getElementById("dateCell").textContent=y+"/"+m+"/"+d;
-  }
-
-  function buildMessage(){
-    const d3=document.getElementById("D3").value.trim();
-    const e6=document.getElementById("E6").value.trim();
-    const e7=document.getElementById("E7").value.trim();
-    const e8=document.getElementById("E8").value.trim();
-
-    return [
-      d3+" 店訂貨",
-      "仙草汁 "+e6+" 箱",
-      "二砂糖 "+e7+" 20KG/袋",
-      "白砂糖 "+e8+" 20KG/袋"
-    ].join("\n");
-  }
-
-  document.getElementById("sendBtn").addEventListener("click",function(){
-    const message=buildMessage();
-    const url="https://line.me/R/msg/text/?"+encodeURIComponent(message);
-    window.location.href=url;
-  });
-
-  document.getElementById("clearBtn").addEventListener("click",function(){
-    ["D3","E6","E7","E8"].forEach(function(id){
-      document.getElementById(id).value="";
-    });
-  });
-
-  setTaiwanDate();
-})();
-</script>
-</body>
-</html>
+const $=id=>document.getElementById(id);
+const now=new Date();$("dateCell").textContent=(now.getFullYear()-1911)+"/"+String(now.getMonth()+1).padStart(2,"0")+"/"+String(now.getDate()).padStart(2,"0");
+$("sendBtn").onclick=()=>{const msg=[$("D3").value.trim()+" 店訂貨","仙草汁 "+$("E6").value.trim()+" 箱","二砂糖 "+$("E7").value.trim()+" 20KG/袋","白砂糖 "+$("E8").value.trim()+" 20KG/袋"].join("\n");location.href="https://line.me/R/msg/text/?"+encodeURIComponent(msg)};
+$("clearBtn").onclick=()=>["D3","E6","E7","E8"].forEach(id=>$(id).value="");
+</script></body></html>
